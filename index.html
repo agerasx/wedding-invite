@@ -4,27 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Приглашение на свадьбу</title>
-  <style>
-    /* Можно пока добавить базовые стили, чтобы проверить отображение */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: #f9f9f9;
-    }
-    .container {
-      text-align: center;
-    }
-  </style>
+  <!-- Подключение красивых шрифтов -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container">
-  <h1>Добро пожаловать на нашу свадьбу!</h1>
-  <p>Здесь будет базовая информация о мероприятии.</p>
+  <!-- Первый блок: Приветствие -->
+  <section class="block" id="welcome">
+    <h1>Приглашение на свадьбу</h1>
+    <p>Добро пожаловать на наше свадебное торжество!</p>
+  </section>
+
+  <!-- Второй блок: Детали мероприятия -->
+  <section class="block" id="details">
+    <h2>Детали мероприятия</h2>
+    <p><strong>Место проведения:</strong> Ресторан «Пример», г. Уфа</p>
+    <p><strong>Дата:</strong> 12 мая</p>
+    <p><strong>Адрес:</strong> ул. Примерная, 123</p>
+    <p><strong>Дресскод:</strong> Желаемый, но не обязательный</p>
+    <p><strong>Важно:</strong> Просьба не брать детей с собой</p>
+  </section>
+
+  <!-- Третий блок: Программа и настроение -->
+  <section class="block" id="program">
+    <h2>Программа</h2>
+    <p>Планируется торжественная церемония, далее праздничный ужин в ресторане.</p>
+    <p>Берите с собой хорошее настроение и желание веселиться!</p>
+  </section>
+
+  <!-- Четвёртый блок: Обратная связь с Google Формой -->
+  <section class="block" id="rsvp">
+    <h2>Подтверждение участия</h2>
+    <div class="iframe-container">
+      <!-- Вставляем скопированный код Google Формы -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScoFeLk05Ob8LeV365SSFaDnr_SgLOJB9rDLWuI24rdIoK8Mw/viewform?embedded=true" width="640" height="555" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+    </div>
+  </section>
+
 </div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
