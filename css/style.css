@@ -87,7 +87,7 @@ p {
 .iframe-container iframe {
     position: relative; /* или absolute, если используете соотношение сторон */
     width: 100%;
-    height: 615px; /* либо 100%, если контейнер адаптивен */
+    height: 700px; /* либо 100%, если контейнер адаптивен */
     border: 0;
 }
 
