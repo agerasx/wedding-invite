@@ -1,35 +1,32 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Функция для чтения параметров URL
+document.addEventListener("DOMContentLoaded", function () {
     function getQueryParam(param) {
         const params = new URLSearchParams(window.location.search);
         return params.get(param);
     }
 
-    // Получаем значение guest из URL (например, ?guest=Alex)
     const guestName = getQueryParam('guest');
 
     if (guestName) {
-        // Обновляем персональное приветствие
         const greetingElement = document.getElementById('greeting');
-        greetingElement.textContent = `Добро пожаловать, ${guestName}! Мы рады, что вы с нами.`;
+        if (greetingElement) {
+            greetingElement.textContent = `Добро пожаловать, ${guestName}!`;
+        }
 
-        // Обновляем ссылку Google Формы для предзаполнения имени
-        const gformIframe = document.getElementById('gform');
-        // Получаем исходный URL формы из атрибута src
-        let gformUrl = gformIframe.getAttribute('src');
+        const tallyIframe = document.getElementById('tally-iframe');
+        if (tallyIframe) {
+            let tallyUrl = tallyIframe.getAttribute('data-tally-src');
+            tallyUrl += tallyUrl.includes("?") ? `&name=${encodeURIComponent(guestName)}` : `?name=${encodeURIComponent(guestName)}`;
 
-        // Параметр для предзаполнения поля «Имя Фамилия»
-        // Замените entry.123456789 на реальный ключ из вашей формы.
-        const prefillParam = `&entry.1965039113=${encodeURIComponent(guestName)}`;
+            console.log("Updated Tally URL:", tallyUrl); // Проверяем, правильный ли URL
 
-        // Если в URL уже есть другие параметры, просто дописываем prefillParam
-        // (Предполагается, что URL уже содержит embedded=true)
-        gformUrl += prefillParam;
-        gformIframe.setAttribute('src', gformUrl);
+            tallyIframe.setAttribute('src', tallyUrl);
+        }
+
     }
 
-    // Анимация появления блоков
-    const blocks = document.querySelectorAll('.block');
+
+
+const blocks = document.querySelectorAll('.block');
     blocks.forEach((block, index) => {
         setTimeout(() => {
             block.classList.add('visible');
