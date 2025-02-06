@@ -54,25 +54,43 @@ p {
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Контейнер для адаптивного iframe */
+/*!* Контейнер для адаптивного iframe *!*/
+/*.iframe-container {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    !* Задаём соотношение сторон. Например, 125% (можете поиграть с этим значением в зависимости от высоты формы) *!*/
+/*    padding-bottom: 125%;*/
+/*    height: 0;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*!* Стили для самого iframe *!*/
+/*.iframe-container iframe {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    border: 0;*/
+/*}*/
+
 .iframe-container {
     position: relative;
     width: 100%;
-    /* Задаём соотношение сторон. Например, 125% (можете поиграть с этим значением в зависимости от высоты формы) */
+    /* Если динамическая высота формы, можно оставить фиксированную высоту, либо задать соотношение сторон:
     padding-bottom: 125%;
     height: 0;
+    */
     overflow: hidden;
 }
 
-/* Стили для самого iframe */
 .iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative; /* или absolute, если используете соотношение сторон */
     width: 100%;
-    height: 100%;
+    height: 615px; /* либо 100%, если контейнер адаптивен */
     border: 0;
 }
+
 
 /* Адаптивность: уменьшение отступов на маленьких экранах */
 @media (max-width: 600px) {

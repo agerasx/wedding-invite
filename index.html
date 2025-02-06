@@ -36,13 +36,45 @@
   </section>
 
   <!-- Четвёртый блок: Обратная связь с Google Формой -->
+<!--  <section class="block" id="rsvp">-->
+<!--    <h2>Подтверждение участия</h2>-->
+<!--    <div class="iframe-container">-->
+<!--      &lt;!&ndash; Вставляем скопированный код Google Формы &ndash;&gt;-->
+<!--      <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLScoFeLk05Ob8LeV365SSFaDnr_SgLOJB9rDLWuI24rdIoK8Mw/viewform?embedded=true" width="640" height="555" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>-->
+<!--    </div>-->
+<!--  </section>-->
+
+  <!-- Четвёртый блок: Подтверждение участия -->
   <section class="block" id="rsvp">
     <h2>Подтверждение участия</h2>
     <div class="iframe-container">
-      <!-- Вставляем скопированный код Google Формы -->
-      <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLScoFeLk05Ob8LeV365SSFaDnr_SgLOJB9rDLWuI24rdIoK8Mw/viewform?embedded=true" width="640" height="555" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+      <iframe data-tally-src="https://tally.so/embed/nWKBGe?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="615" frameborder="0" marginheight="0" marginwidth="0" title="Имя"></iframe>
+      <script>
+        var d = document,
+                w = "https://tally.so/widgets/embed.js",
+                v = function () {
+                  if (typeof Tally !== "undefined") {
+                    Tally.loadEmbeds();
+                  } else {
+                    d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+                      e.src = e.dataset.tallySrc;
+                    });
+                  }
+                };
+        if (typeof Tally !== "undefined") {
+          v();
+        } else if (d.querySelector('script[src="' + w + '"]') == null) {
+          var s = d.createElement("script");
+          s.src = w;
+          s.onload = v;
+          s.onerror = v;
+          d.body.appendChild(s);
+        }
+      </script>
     </div>
   </section>
+
+
 
 </div>
 
