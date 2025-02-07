@@ -16,17 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (tallyIframe) {
             let tallyUrl = tallyIframe.getAttribute('data-tally-src');
             tallyUrl += tallyUrl.includes("?") ? `&name=${encodeURIComponent(guestName)}` : `?name=${encodeURIComponent(guestName)}`;
-
-            console.log("Updated Tally URL:", tallyUrl); // Проверяем, правильный ли URL
-
             tallyIframe.setAttribute('src', tallyUrl);
         }
-
     }
 
-
-
-const blocks = document.querySelectorAll('.block');
+    const blocks = document.querySelectorAll('.block');
     blocks.forEach((block, index) => {
         setTimeout(() => {
             block.classList.add('visible');
