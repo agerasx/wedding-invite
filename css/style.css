@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: #ffffff;
-    background-image: url('../images/leaf-pattern.png');
+    /*background-image: url('../images/leaf-pattern.png');*/
     background-repeat: repeat;
     background-size: auto;
     color: #333;
@@ -64,10 +64,24 @@ p {
     position: absolute;
     bottom: 0;
     left: 200px;
-    width: 100%;
+    width: calc(100% - 200px);
     height: 70px; /* Высота слоя, который перекроет watermark */
     background-color: white; /* Или другой цвет под фон */
     z-index: 10;
+}
+
+@media (max-width: 350px) {
+    .overlay {
+        left: 190px;
+        width: calc(100% - 190px);
+    }
+}
+
+@media (max-width: 317px) {
+    .overlay {
+        left: 180px;
+        width: calc(100% - 180px);
+    }
 }
 
 @media (max-width: 600px) {
