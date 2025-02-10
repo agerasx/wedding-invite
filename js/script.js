@@ -5,18 +5,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const guestName = getQueryParam('guest');
+    const countInt = getQueryParam('count');
 
-    if (guestName) {
-        const greetingElement = document.getElementById('greeting');
-        if (greetingElement) {
-            greetingElement.textContent = `Добро пожаловать, ${guestName}!`;
-        }
-
+    if (guestName || countInt) {
         const tallyIframe = document.getElementById('tally-iframe');
         if (tallyIframe) {
             let tallyUrl = tallyIframe.getAttribute('data-tally-src');
-            tallyUrl += tallyUrl.includes("?") ? `&name=${encodeURIComponent(guestName)}` : `?name=${encodeURIComponent(guestName)}`;
-            tallyIframe.setAttribute('src', tallyUrl);
+            const params = [];
+
+            if (guestName) {
+                params.push(`guest=${encodeURIComponent(guestName)}`);
+            }
+
+            if (countInt) {
+                params.push(`count=${encodeURIComponent(countInt)}`);
+            }
+
+            if (params.length > 0) {
+                tallyUrl += tallyUrl.includes("?") ? `&${params.join("&")}` : `?${params.join("&")}`;
+                tallyIframe.setAttribute('src', tallyUrl);
+            }
+        }
+
+        if (guestName) {
+            const greetingElement = document.getElementById('greeting');
+            if (greetingElement) {
+                greetingElement.textContent = `Добро пожаловать, ${guestName}!`;
+            }
         }
     }
 
