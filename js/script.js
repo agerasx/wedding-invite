@@ -41,4 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
             block.classList.add('visible');
         }, 300 * index);
     });
+
+    function loadBackgroundImages() {
+        const sections = document.querySelectorAll(".image-bg");
+
+        sections.forEach((section) => {
+            const bgImage = section.dataset.bg;
+            if (bgImage) {
+                section.style.backgroundImage = `url('${bgImage}')`;
+            }
+        });
+    }
+
+    loadBackgroundImages();
 });
