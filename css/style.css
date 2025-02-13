@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-weight: 300;
     background-color: #ffffff;
     background-repeat: repeat;
     background-size: auto;
@@ -9,19 +10,20 @@ body {
 }
 
 .container {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
 h1, h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lobster', cursive;
     margin-bottom: 20px;
     color: #5d6d5a;
 }
 
 h1 {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
 }
 
 h2 {
@@ -59,6 +61,17 @@ p {
     padding: 40px 25px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
+}
+
+.text-animate {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.text-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .white-bg {

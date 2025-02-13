@@ -36,11 +36,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const blocks = document.querySelectorAll('.block');
-    blocks.forEach((block, index) => {
-        setTimeout(() => {
-            block.classList.add('visible');
-        }, 300 * index);
-    });
+
+    function checkVisibility() {
+        blocks.forEach((block) => {
+            const rect = block.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
+                if (!block.classList.contains('visible')) {
+                    block.classList.add('visible');
+
+                    const texts = block.querySelectorAll('.text-animate');
+                    texts.forEach((text, i) => {
+                        setTimeout(() => {
+                            text.classList.add('visible');
+                        }, 250 * i);
+                    });
+                }
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
 
     function loadBackgroundImages() {
         const sections = document.querySelectorAll(".image-bg");
