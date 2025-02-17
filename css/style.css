@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes', serif;
     font-weight: 300;
     background-color: #ffffff;
     background-repeat: repeat;
@@ -20,8 +20,8 @@ body {
     padding: 40px 20px;
 }
 
-h1, h2 {
-    font-family: 'Great Vibes', cursive;
+h1, h2, h3 {
+    font-family: 'Great Vibes', serif;
     margin-bottom: 20px;
     color: #5d6d5a;
 }
@@ -34,8 +34,12 @@ h2 {
     font-size: 2rem;
 }
 
+h3 {
+    font-size: 1.8rem;
+}
+
 p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 15px;
     color: #5d6d5a;
 }
@@ -78,6 +82,51 @@ p {
     transform: translateY(0);
 }
 
+.map-link {
+    display: inline-block;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    height: 34px;
+    width: 34px;
+    vertical-align: middle;
+}
+
+.map-link:hover {
+    background-color: #f0f0f0;
+    border-color: #ddd;
+}
+
+.map-link:focus {
+    outline: none;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.icon-small {
+    width: 30px;
+    height: 30px;
+}
+
+.text-medium {
+    margin-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
 .white-bg {
     background-color: white;
 }
@@ -114,8 +163,8 @@ p {
     bottom: 0;
     left: 200px;
     width: calc(100% - 200px);
-    height: 70px; /* Высота слоя, который перекроет watermark */
-    background-color: white; /* Или другой цвет под фон */
+    height: 70px;
+    background-color: white;
     z-index: 10;
 }
 

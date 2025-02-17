@@ -30,9 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (guestName) {
             const greetingElement = document.getElementById('greeting');
             if (greetingElement) {
-                greetingElement.textContent = `Добро пожаловать, ${guestName}!`;
+                const names = guestName.split(" и ");
+                if (names.length > 1) {
+                    greetingElement.innerHTML = `Дорогие ${guestName}, без вас этот день был бы неполным!<br>Добро пожаловать на нашу свадьбу!`;
+                } else {
+                    greetingElement.innerHTML = `${guestName}, мы счастливы разделить этот день с тобой!<br>Добро пожаловать на нашу свадьбу!`;
+                }
             }
         }
+
     }
 
     const blocks = document.querySelectorAll('.block');
