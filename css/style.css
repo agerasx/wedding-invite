@@ -110,10 +110,6 @@ p {
     margin: 0 auto;
 }
 
-.icon:hover {
-    transform: scale(1.1);
-}
-
 .icon-small {
     width: 30px;
     height: 30px;
@@ -185,5 +181,16 @@ p {
 @media (max-width: 600px) {
     .block {
         padding: 40px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .map-link:hover {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    .icon:hover {
+        transform: none;
     }
 }
