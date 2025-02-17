@@ -78,4 +78,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     loadBackgroundImages();
+
+    document.querySelectorAll(".faq-question").forEach(function (question) {
+        question.addEventListener("click", function () {
+            const faqItem = this.parentElement;
+            faqItem.classList.toggle("open");
+
+            const answer = faqItem.querySelector(".faq-answer");
+
+            if (faqItem.classList.contains("open")) {
+                answer.style.display = "block";  // Показываем ответ
+            } else {
+                setTimeout(() => {
+                    answer.style.display = "none";  // Скрываем ответ с задержкой после анимации
+                }, 500);  // Задержка должна быть чуть больше времени анимации
+            }
+        });
+    });
 });

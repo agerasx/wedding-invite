@@ -21,7 +21,7 @@ body {
     padding: 40px 20px;
 }
 
-h1, h2, h3 {
+h1, h2 {
     font-family: "Great Vibes", cursive;
     margin-bottom: 20px;
     color: #5d6d5a;
@@ -36,7 +36,10 @@ h2 {
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-family: "Marck Script", serif;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #5d6d5a;
 }
 
 p {
@@ -124,6 +127,51 @@ p {
     text-align: center;
 }
 
+.faq-answer {
+    display: none;
+    margin-top: 5px;
+    opacity: 0;
+    transform: translateY(-20px);  /* Начальная позиция для анимации */
+    transition: opacity 0.5s ease, transform 0.5s ease;  /* Плавное появление и скольжение */
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);  /* Текст скользит вниз */
+}
+
+.faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    padding-right: 20px;
+}
+
+.faq-question::after {
+    content: "▼";
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-question::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-answer span {
+    opacity: 0;
+    display: block;
+    transition: opacity 0.5s ease;
+}
+
+.faq-item.open .faq-answer span {
+    opacity: 1;
+}
+
 .white-bg {
     background-color: white;
 }
@@ -137,9 +185,9 @@ p {
 
 .leaves-bg {
     background-image: url('../images/leaves.webp');
+    background-position: top center;
+    background-repeat: repeat-y;
     background-size: auto;
-    background-position: center;
-    background-repeat: repeat;
 }
 
 .iframe-container {
