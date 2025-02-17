@@ -184,7 +184,7 @@ p {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .map-link:hover {
         background-color: transparent;
         border-color: transparent;
