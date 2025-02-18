@@ -11,10 +11,6 @@ body {
     height: 100vh;
 }
 
-section {
-    min-height: calc(100vh - env(safe-area-inset-bottom));
-}
-
 .falling-petals {
     position: fixed;
     top: 0;

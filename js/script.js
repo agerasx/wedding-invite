@@ -117,4 +117,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+    let windowHeight = window.innerHeight;
+
+    let sections = document.querySelectorAll('section');
+    sections.forEach(function(section) {
+        section.style.minHeight = `${windowHeight}px`;
+    });
+
+    window.addEventListener('resize', function() {
+        let windowHeight = window.innerHeight;
+        sections.forEach(function(section) {
+            section.style.minHeight = `${windowHeight}px`;
+        });
+    });
+
 });
