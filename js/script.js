@@ -95,4 +95,26 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    window.onload = function() {
+        for (let i = 0; i < 10; i++) {
+            let petalClone = document.querySelector('.petal').cloneNode(true);
+
+            // Случайные значения для ширины и высоты лепестка
+            const width = Math.random() * 20 + 10; // Ширина от 20px до 50px
+            const height = Math.random() * 20 + 20; // Высота от 40px до 80px
+
+            petalClone.style.width = `${width}px`;
+            petalClone.style.height = `${height}px`;
+
+            // Случайное начальное положение по X
+            petalClone.style.left = `${Math.random() * 100}vw`;
+
+            // Случайная продолжительность падения
+            petalClone.style.animationDuration = `${Math.random() * 3 + 4}s`;
+
+            document.querySelector('.falling-petals').appendChild(petalClone);
+        }
+    };
+
 });
