@@ -8,7 +8,6 @@ body {
     background-size: auto;
     color: #333;
     line-height: 1.6;
-    overflow: hidden;
 }
 
 .falling-petals {
@@ -20,7 +19,7 @@ body {
     pointer-events: none;
     overflow: hidden;
     z-index: 9999;
-    -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на iOS */
+    -webkit-overflow-scrolling: touch;
 }
 
 .petal {
@@ -45,8 +44,6 @@ body {
     }
 }
 
-
-/* Дублируем SVG лепестки с случайным начальным положением */
 .falling-petals .petal:nth-child(1) {
     animation-delay: 0s;
 }
@@ -184,14 +181,14 @@ p {
     display: none;
     margin-top: 5px;
     opacity: 0;
-    transform: translateY(-20px);  /* Начальная позиция для анимации */
-    transition: opacity 0.5s ease, transform 0.5s ease;  /* Плавное появление и скольжение */
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .faq-item.open .faq-answer {
     display: block;
     opacity: 1;
-    transform: translateY(0);  /* Текст скользит вниз */
+    transform: translateY(0);
 }
 
 .faq-question {
