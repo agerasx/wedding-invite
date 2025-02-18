@@ -19,29 +19,31 @@ body {
     pointer-events: none;
     overflow: hidden;
     z-index: 9999;
+    -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на iOS */
 }
 
 .petal {
     position: absolute;
     opacity: 0.8;
+    visibility: hidden;
     transform-origin: center;
-    visibility: hidden; /* Скрыть элементы на старте */
     animation: fall 6s linear infinite;
+    will-change: transform, opacity; /* Указание, что элемент будет изменять положение и прозрачность */
 }
 
-/* Анимация падения с наклоном */
 @keyframes fall {
     0% {
         transform: translateY(-10vh) translateX(-50vw) rotate(0deg);
         opacity: 1;
-        visibility: visible; /* Показать лепесток на старте анимации */
+        visibility: visible;
     }
     100% {
         transform: translateY(110vh) translateX(50vw) rotate(720deg);
         opacity: 0;
-        visibility: hidden; /* Скрыть лепесток в конце анимации */
+        visibility: hidden;
     }
 }
+
 
 /* Дублируем SVG лепестки с случайным начальным положением */
 .falling-petals .petal:nth-child(1) {
