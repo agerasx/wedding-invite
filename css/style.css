@@ -9,12 +9,10 @@ body {
     color: #333;
     line-height: 1.6;
     height: 100vh;
-    overflow-y: auto;
 }
 
 section {
-    min-height: 100vh;
-    overflow-y: auto;
+    min-height: calc(100vh - env(safe-area-inset-bottom));
 }
 
 .falling-petals {
