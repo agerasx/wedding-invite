@@ -47,17 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
         fixedHeight = window.visualViewport.height;
     }
 
-    const blocks = document.querySelectorAll('.block');
-
     document.querySelectorAll('.block').forEach(block => {
         block.style.height = `${fixedHeight}px`;
     });
 
     function checkVisibility() {
-        blocks.forEach((block) => {
+        document.querySelectorAll('.block').forEach(block => {
             const rect = block.getBoundingClientRect();
 
-            if (rect.top < initialHeight * 0.8 && rect.bottom > 0) {
+            if (rect.top < fixedHeight * 0.8 && rect.bottom > 0) {
                 if (!block.classList.contains('visible')) {
                     block.classList.add('visible');
 
