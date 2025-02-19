@@ -41,22 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    function getFixedHeight() {
-        return window.visualViewport ? window.visualViewport.height : window.innerHeight;
-    }
-
-    let fixedHeight = getFixedHeight();
-
-    // Устанавливаем высоту для всех блоков
-    document.querySelectorAll('.block').forEach(block => {
-        block.style.height = `${fixedHeight}px`;
-    });
+    const blocks = document.querySelectorAll('.block');
 
     function checkVisibility() {
-        document.querySelectorAll('.block').forEach(block => {
+        blocks.forEach((block) => {
             const rect = block.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
 
-            if (rect.top < fixedHeight * 0.8 && rect.bottom > 0) {
+            if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
                 if (!block.classList.contains('visible')) {
                     block.classList.add('visible');
 
