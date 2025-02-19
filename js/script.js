@@ -40,11 +40,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     }
-    const initialHeight = window.innerHeight; // Фиксируем первоначальную высоту экрана
+
+    let initialHeight = window.innerHeight;
+
+    if (window.visualViewport) {
+        initialHeight = window.visualViewport.height;
+    }
+
     const blocks = document.querySelectorAll('.block');
 
     blocks.forEach(block => {
-        block.style.height = `${initialHeight}px`; // Применяем фиксированную высоту
+        block.style.height = `${initialHeight}px`;
     });
 
     function checkVisibility() {
