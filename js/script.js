@@ -41,16 +41,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    let initialHeight = window.innerHeight;
+    let fixedHeight = window.innerHeight;
 
     if (window.visualViewport) {
-        initialHeight = window.visualViewport.height;
+        fixedHeight = window.visualViewport.height;
     }
 
     const blocks = document.querySelectorAll('.block');
 
-    blocks.forEach(block => {
-        block.style.height = `${initialHeight}px`;
+    document.querySelectorAll('.block').forEach(block => {
+        block.style.height = `${fixedHeight}px`;
     });
 
     function checkVisibility() {
