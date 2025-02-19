@@ -11,12 +11,6 @@ body {
     height: 100vh;
 }
 
-.scroll-container {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-}
-
 .falling-petals {
     position: fixed;
     top: 0;
@@ -106,17 +100,16 @@ p {
 }
 
 .block {
-    scroll-snap-align: center;
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 50px 0;
     text-align: center;
     opacity: 0;
-    /*transform: translateY(20px);*/
+    transform: translateY(20px);
 }
 
 .block.visible {
