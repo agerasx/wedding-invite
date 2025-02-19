@@ -40,15 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     }
-
+    const initialHeight = window.innerHeight; // Фиксируем первоначальную высоту экрана
     const blocks = document.querySelectorAll('.block');
+
+    blocks.forEach(block => {
+        block.style.height = `${initialHeight}px`; // Применяем фиксированную высоту
+    });
 
     function checkVisibility() {
         blocks.forEach((block) => {
             const rect = block.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
 
-            if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
+            if (rect.top < initialHeight * 0.8 && rect.bottom > 0) {
                 if (!block.classList.contains('visible')) {
                     block.classList.add('visible');
 
