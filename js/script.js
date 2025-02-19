@@ -41,12 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    let fixedHeight = window.innerHeight;
-
-    if (window.visualViewport) {
-        fixedHeight = window.visualViewport.height;
+    function getFixedHeight() {
+        return window.visualViewport ? window.visualViewport.height : window.innerHeight;
     }
 
+    let fixedHeight = getFixedHeight();
+
+    // Устанавливаем высоту для всех блоков
     document.querySelectorAll('.block').forEach(block => {
         block.style.height = `${fixedHeight}px`;
     });
