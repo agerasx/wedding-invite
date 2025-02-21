@@ -8,8 +8,14 @@ body {
     background-size: auto;
     color: #333;
     line-height: 1.6;
-    scroll-snap-type: y proximity;
+    height: 100vh;
+}
+
+.scroll-container {
+    height: 100vh;
     overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 .falling-petals {

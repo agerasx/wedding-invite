@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    const blocks = document.querySelectorAll('.block');
+    const blocks = document.querySelectorAll(".block");
+    const scrollContainer = document.querySelector(".scroll-container"); // Находим контейнер с прокруткой
 
     function checkVisibility() {
         blocks.forEach((block) => {
@@ -49,13 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const windowHeight = window.innerHeight;
 
             if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
-                if (!block.classList.contains('visible')) {
-                    block.classList.add('visible');
+                if (!block.classList.contains("visible")) {
+                    block.classList.add("visible");
 
-                    const texts = block.querySelectorAll('.text-animate');
+                    const texts = block.querySelectorAll(".text-animate");
                     texts.forEach((text, i) => {
                         setTimeout(() => {
-                            text.classList.add('visible');
+                            text.classList.add("visible");
                         }, 250 * i);
                     });
                 }
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    window.addEventListener('scroll', checkVisibility);
+    scrollContainer.addEventListener("scroll", checkVisibility);
     checkVisibility();
 
     function loadBackgroundImages() {
