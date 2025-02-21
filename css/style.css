@@ -8,7 +8,8 @@ body {
     background-size: auto;
     color: #333;
     line-height: 1.6;
-    height: 100vh;
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
 }
 
 .falling-petals {
@@ -100,6 +101,7 @@ p {
 }
 
 .block {
+    scroll-snap-align: start;
     position: relative;
     width: 100%;
     min-height: 700px;
