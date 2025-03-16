@@ -60,8 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
             let baseUrl = tallyIframe.getAttribute("data-tally-src");
 
             let url = new URL(baseUrl);
-            url.searchParams.set("guest", guestName);
+            url.searchParams.set("guest", encodeURIComponent(guestName));
             url.searchParams.set("count", countInt);
+
+            console.log("Final Tally URL:", url.toString());
 
             tallyIframe.setAttribute("data-tally-src", url.toString());
 
@@ -69,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 tallyIframe.src = url.toString();
             }
         }
-
 
         const greetingElement = document.getElementById('greeting');
         if (greetingElement) {
