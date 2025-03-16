@@ -56,21 +56,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const tallyIframe = document.getElementById("tally-iframe");
         if (tallyIframe) {
-            let tallyUrl = tallyIframe.getAttribute('data-tally-src');
-            const params = [];
+            let tallyUrl = tallyIframe.getAttribute("data-tally-src");
 
-            if (guestName) {
-                params.push(`guest=${encodeURIComponent(guestName)}`);
-            }
+            let url = new URL(tallyUrl);
+            url.searchParams.set("guest", guestName);
+            url.searchParams.set("count", countInt);
 
-            if (countInt) {
-                params.push(`count=${encodeURIComponent(countInt)}`);
-            }
-
-            if (params.length > 0) {
-                tallyUrl += tallyUrl.includes("?") ? `&${params.join("&")}` : `?${params.join("&")}`;
-                tallyIframe.setAttribute('src', tallyUrl);
-            }
+            tallyIframe.setAttribute("src", url.toString());
         }
 
         const greetingElement = document.getElementById('greeting');
