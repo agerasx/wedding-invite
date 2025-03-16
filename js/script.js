@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return params.get(param);
     }
 
-    const guestKey = getQueryParam("guests");
+    const guestKey = getQueryParam("guest");
 
     if (guestKey && guestList.hasOwnProperty(guestKey)) {
         const guestData = guestList[guestKey];
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let baseUrl = tallyIframe.getAttribute("data-tally-src");
 
             let url = new URL(baseUrl);
-            url.searchParams.set("guest", guestName);
+            url.searchParams.set("names", guestName);
             url.searchParams.set("count", countInt);
 
             console.log("Final Tally URL:", url.toString());
