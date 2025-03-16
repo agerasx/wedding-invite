@@ -49,20 +49,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const guestKey = getQueryParam("guest");
 
-    if (guestKey && guestList[guestKey]) {
+    if (guestKey && guestList.hasOwnProperty(guestKey)) {
         const guestData = guestList[guestKey];
         const guestName = guestData.names;
         const countInt = guestData.count;
 
         const tallyIframe = document.getElementById("tally-iframe");
+
         if (tallyIframe) {
-            let tallyUrl = tallyIframe.getAttribute("data-tally-src");
+            let tallyUrl = tallyIframe.dataset.tallySrc;
 
             let url = new URL(tallyUrl);
             url.searchParams.set("guest", guestName);
             url.searchParams.set("count", countInt);
 
-            tallyIframe.setAttribute("src", url.toString());
+            console.log("Final Tally URL:", url.toString());
+
+            tallyIframe.src = url.toString();
         }
 
         const greetingElement = document.getElementById('greeting');
