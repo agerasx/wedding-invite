@@ -54,19 +54,22 @@ document.addEventListener("DOMContentLoaded", function () {
         const guestName = guestData.names;
         const countInt = guestData.count;
 
-        const tallyIframe = document.getElementById("tally-iframe");
+        const tallyIframe = document.querySelector("iframe[data-tally-src]");
 
         if (tallyIframe) {
-            let tallyUrl = tallyIframe.dataset.tallySrc;
+            let baseUrl = tallyIframe.getAttribute("data-tally-src");
 
-            let url = new URL(tallyUrl);
+            let url = new URL(baseUrl);
             url.searchParams.set("guest", guestName);
             url.searchParams.set("count", countInt);
 
-            console.log("Final Tally URL:", url.toString());
+            tallyIframe.setAttribute("data-tally-src", url.toString());
 
-            tallyIframe.src = url.toString();
+            if (tallyIframe.hasAttribute("src")) {
+                tallyIframe.src = url.toString();
+            }
         }
+
 
         const greetingElement = document.getElementById('greeting');
         if (greetingElement) {
