@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const greetingElement = document.getElementById('greeting');
         if (greetingElement) {
             if (countInt > 1) {
-                greetingElement.innerHTML = `Дорогие ${guestName}, без вас этот день был бы неполным!<br>Добро пожаловать на нашу свадьбу!`;
+                greetingElement.innerHTML = `Дорогие <span class="highlight">${guestName},</span> без вас этот день был бы неполным!<br>Добро пожаловать на нашу свадьбу!`;
             } else {
-                greetingElement.innerHTML = `${guestName}, мы счастливы разделить этот день с тобой!<br>Добро пожаловать на нашу свадьбу!`;
+                greetingElement.innerHTML = `<span class="highlight">${guestName},</span> мы счастливы разделить этот день с тобой!<br>Добро пожаловать на нашу свадьбу!`;
             }
         }
     }
