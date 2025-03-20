@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: "Marck Script", serif;
+    font-family: "Cormorant Garamond", serif;
     font-style: normal;
     font-weight: 300;
     background-color: #ffffff;
@@ -73,7 +73,7 @@ body {
 }
 
 h1, h2 {
-    font-family: "Great Vibes", cursive;
+    font-family: "Cormorant Garamond", serif;
     margin-bottom: 20px;
     color: #5d6d5a;
 }
@@ -87,7 +87,7 @@ h2 {
 }
 
 h3 {
-    font-family: "Marck Script", serif;
+    font-family: "Cormorant Garamond", serif;
     font-size: 1.6rem;
     margin-bottom: 20px;
     color: #5d6d5a;
@@ -97,6 +97,39 @@ p {
     font-size: 1.4rem;
     margin-bottom: 15px;
     color: #5d6d5a;
+}
+
+.program-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+}
+
+.program-time {
+    font-weight: bold;
+    min-width: 30px;
+    text-align: right;
+}
+
+.highlight {
+    position: relative;
+    display: inline-block;
+    padding: 2px 5px;
+}
+
+.highlight::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 105%;
+    height: 55%;
+    background: rgba(188, 239, 188, 0.5);
+    z-index: -1;
+    border-radius: 15px 25px 10px 20px;
+    transform: translateY(-50%) rotate(-2deg);
+    filter: blur(2px);
 }
 
 .block {
