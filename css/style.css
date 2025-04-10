@@ -9,6 +9,7 @@ body {
     color: #333;
     line-height: 1.6;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .falling-petals {
@@ -74,28 +75,28 @@ body {
 
 h1, h2 {
     font-family: "Cormorant Garamond", serif;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #5d6d5a;
 }
 
 h1 {
-    font-size: 2.4rem;
+    font-size: 1.9rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 h3 {
     font-family: "Cormorant Garamond", serif;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-bottom: 20px;
     color: #5d6d5a;
 }
 
 p {
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-bottom: 15px;
     color: #5d6d5a;
 }
@@ -136,7 +137,7 @@ p {
 .block {
     position: relative;
     width: 100%;
-    min-height: 700px;
+    min-height: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -297,6 +298,108 @@ p {
     background-color: white;
     z-index: 10;
 }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.program-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    flex-wrap: nowrap;
+    min-width: 0;
+}
+
+.program-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.program-image {
+    width: 20vw;
+    max-width: 100px;
+    min-width: 60px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.program-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    gap: 6px;
+}
+
+.program-time {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.program-description {
+    font-size: 1.1rem;
+    color: #333;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+
+.flower-decor {
+    position: fixed;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    animation: fadeInUp 1.5s ease-out forwards;
+    overflow: hidden;
+    max-width: 100vw;
+}
+
+.flower-decor img {
+    width: 200px;
+    max-width: 40vw;
+    height: auto;
+    opacity: 0.9;
+}
+
+.flower-decor-right {
+    right: 0;
+}
+.flower-decor-right img {
+    transform: rotate(-20deg) translateX(40px);
+    transform-origin: bottom right;
+}
+
+.flower-decor-left {
+    left: 0;
+}
+.flower-decor-left img {
+    /*transform: rotate(20deg);*/
+    transform-origin: top left;
+}
+
+@media (max-width: 768px) {
+    .flower-decor img {
+        width: 120px;
+        max-width: 50vw;
+        opacity: 0.7;
+    }
+}
+
 
 @media (max-width: 350px) {
     .overlay {
