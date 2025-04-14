@@ -359,6 +359,38 @@ p {
 }
 
 
+/*Dress Code */
+.color-palette {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: nowrap;
+}
+
+.color-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    cursor: default;
+    transition: transform 0.3s ease;
+    margin-left: -12px; /* перекрытие */
+    z-index: 1;
+}
+
+.color-circle:first-child {
+    margin-left: 0; /* чтобы первый кружок не уходил влево */
+}
+
+.color-circle:hover {
+    transform: scale(1.1);
+    z-index: 2; /* поднимаем при ховере */
+}
+
+
 .flower-decor {
     position: fixed;
     bottom: 0;
