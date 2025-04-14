@@ -101,6 +101,10 @@ p {
     color: #5d6d5a;
 }
 
+.color-white {
+    color: #ffffff;
+}
+
 .program-item {
     display: flex;
     align-items: center;
@@ -114,30 +118,30 @@ p {
     text-align: right;
 }
 
-.highlight {
-    position: relative;
-    display: inline-block;
-    padding: 2px 5px;
-}
+/*.highlight {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    padding: 2px 5px;*/
+/*}*/
 
-.highlight::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 105%;
-    height: 55%;
-    background: rgba(188, 239, 188, 0.5);
-    z-index: -1;
-    border-radius: 15px 25px 10px 20px;
-    transform: translateY(-50%) rotate(-2deg);
-    filter: blur(2px);
-}
+/*.highlight::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    top: 50%;*/
+/*    width: 105%;*/
+/*    height: 55%;*/
+/*    background: rgba(188, 239, 188, 0.5);*/
+/*    z-index: -1;*/
+/*    border-radius: 15px 25px 10px 20px;*/
+/*    transform: translateY(-50%) rotate(-2deg);*/
+/*    filter: blur(2px);*/
+/*}*/
 
 .block {
     position: relative;
     width: 100%;
-    min-height: 550px;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,9 +160,17 @@ p {
 .content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 40px 25px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.content-green {
+    margin: 0;
+    padding: 0 20px;
+    background-color: #5d6d5a;
+}
+
+.content-green h2 {
+    margin-top: 0;
 }
 
 .text-animate {
@@ -314,9 +326,18 @@ p {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     flex-wrap: nowrap;
     min-width: 0;
+    max-width: 300px;
+}
+
+.program-group {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .program-row.reverse {
@@ -353,11 +374,31 @@ p {
 
 .program-description {
     font-size: 1.1rem;
-    color: #333;
     word-break: break-word;
     overflow-wrap: break-word;
 }
 
+
+/*backgorund*/
+.wave-top,
+.wave-bottom {
+    width: 100vw;
+    overflow: hidden;
+    line-height: 0;
+    position: relative;
+    left: 0;
+}
+
+.wave-top svg,
+.wave-bottom svg {
+    width: 100%;
+    height: 100px;
+    display: block;
+}
+
+.wave-top svg {
+    transform: rotate(180deg);
+}
 
 /*Dress Code */
 .color-palette {
@@ -389,6 +430,9 @@ p {
     transform: scale(1.1);
     z-index: 2; /* поднимаем при ховере */
 }
+
+/*title section*/
+
 
 
 .flower-decor {

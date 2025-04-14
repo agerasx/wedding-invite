@@ -24,16 +24,23 @@
     </defs>
   </svg>
 </div>
-<section class="block white-bg" id="welcome">
+
+<section class="block welcome-section" id="welcome">
+<!--  <div class="photo-mask-bg"></div>-->
+
   <div class="content">
     <h2 class="text-animate">Ильгиз и Эляна приглашают вас!</h2>
-    <p id="greeting" class="text-animate">Этот день был бы неполным без вас. Добро пожаловать на наше свадебное торжество!</p>
-  </div>
-  <div class="flower-decor flower-decor-left">
-    <img src="images/flowers/flower6.png" alt="Flower Decoration" />
+    <p id="greeting" class="text-animate">
+      Этот день был бы неполным без вас. Добро пожаловать на наше свадебное торжество!
+    </p>
   </div>
 </section>
 
+
+
+<!--  <div class="flower-decor flower-decor-left">-->
+<!--    <img src="images/flowers/flower6.png" alt="Flower Decoration" />-->
+<!--  </div>-->
 <section class="block white-bg" id="details">
   <div class="content">
     <h2 class="text-animate"><span class="highlight">Где и когда?</span></h2>
@@ -52,41 +59,64 @@
       </a>
     </p>
   </div>
-  <div class="flower-decor flower-decor-right">
-    <img src="images/flowers/flower5.png" alt="Flower Decoration" />
-  </div>
+<!--  <div class="flower-decor flower-decor-right">-->
+<!--    <img src="images/flowers/flower5.png" alt="Flower Decoration" />-->
+<!--  </div>-->
 </section>
 
 <section class="block white-bg" id="program">
-  <div class="content">
-    <h2 class="text-animate"><span class="highlight">Программа</span></h2>
 
-    <div class="program-row text-animate">
-      <img src="images/timetable/first.png" alt="Фуршет" class="program-image">
-      <div class="program-item">
-        <div class="program-time">15:00</div>
-        <div class="program-description">Начало сбора гостей</div>
+
+  <div class="wave-wrapper">
+    <div class="wave-top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#5d6d5a" d="M0,0L26.7,10.7C53.3,21,107,43,160,64C213.3,85,267,107,320,138.7C373.3,171,427,213,480,213.3C533.3,213,587,171,640,160C693.3,149,747,171,800,186.7C853.3,203,907,213,960,197.3C1013.3,181,1067,139,1120,117.3C1173.3,96,1227,96,1280,90.7C1333.3,85,1387,75,1413,69.3L1440,64L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path>
+      </svg>
+    </div>
+    <div class="content-green">
+      <h2 class="text-animate color-white">Программа</h2>
+
+      <div class="program-group">
+        <div class="text-animate">
+          <div class="program-row">
+            <img src="images/timetable/first.png" alt="Фуршет" class="program-image">
+            <div class="program-item">
+              <div class="program-time color-white">15:00</div>
+              <div class="program-description color-white">Начало сбора гостей</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-animate">
+          <div class="program-row reverse">
+            <img src="images/timetable/second.png" alt="Регистрация" class="program-image">
+            <div class="program-item">
+              <div class="program-time color-white">16:00</div>
+              <div class="program-description color-white">Торжественная<br>регистрация</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-animate">
+          <div class="program-row">
+            <img src="images/timetable/third.png" alt="Банкет" class="program-image">
+            <div class="program-item">
+              <div class="program-time color-white">17:00</div>
+              <div class="program-description color-white">Банкетный ужин</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="program-row reverse text-animate">
-      <img src="images/timetable/second.png" alt="Регистрация" class="program-image">
-      <div class="program-item">
-        <div class="program-time">16:00</div>
-        <div class="program-description">Торжественная<br>регистрация</div>
-      </div>
+    <div class="wave-bottom">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#5d6d5a" d="M0,0L26.7,10.7C53.3,21,107,43,160,64C213.3,85,267,107,320,138.7C373.3,171,427,213,480,213.3C533.3,213,587,171,640,160C693.3,149,747,171,800,186.7C853.3,203,907,213,960,197.3C1013.3,181,1067,139,1120,117.3C1173.3,96,1227,96,1280,90.7C1333.3,85,1387,75,1413,69.3L1440,64L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path>
+      </svg>
     </div>
-
-    <div class="program-row text-animate">
-      <img src="images/timetable/third.png" alt="Банкет" class="program-image">
-      <div class="program-item">
-        <div class="program-time">17:00</div>
-        <div class="program-description">Банкетный ужин</div>
-      </div>
-    </div>
-
   </div>
 </section>
+
 
 <section class="block white-bg" id="dress-code">
   <div class="content">
@@ -105,10 +135,22 @@
 </section>
 
 <section class="block white-bg" id="no-children">
-  <div class="content">
-    <h2 class="text-animate"><span class="highlight">О детях</span></h2>
-    <p class="text-animate">Дорогие гости, нам бы хотелось, чтобы этот вечер стал для вас возможностью отдохнуть и насладиться праздником, поэтому просим вас оставить детей дома. Спасибо за понимание!</p>
+  <div class="wave-wrapper">
+    <div class="wave-top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#5d6d5a" d="M0,0L26.7,10.7C53.3,21,107,43,160,64C213.3,85,267,107,320,138.7C373.3,171,427,213,480,213.3C533.3,213,587,171,640,160C693.3,149,747,171,800,186.7C853.3,203,907,213,960,197.3C1013.3,181,1067,139,1120,117.3C1173.3,96,1227,96,1280,90.7C1333.3,85,1387,75,1413,69.3L1440,64L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path>
+      </svg>
     </div>
+    <div class="content-green">
+      <h2 class="text-animate color-white">О детях</h2>
+      <p class="text-animate color-white" style="margin-bottom: 0">Дорогие гости, нам бы хотелось, чтобы этот вечер стал для вас возможностью отдохнуть и насладиться праздником, поэтому просим вас оставить детей дома. Спасибо за понимание!</p>
+    </div>
+    <div class="wave-bottom">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#5d6d5a" d="M0,0L26.7,10.7C53.3,21,107,43,160,64C213.3,85,267,107,320,138.7C373.3,171,427,213,480,213.3C533.3,213,587,171,640,160C693.3,149,747,171,800,186.7C853.3,203,907,213,960,197.3C1013.3,181,1067,139,1120,117.3C1173.3,96,1227,96,1280,90.7C1333.3,85,1387,75,1413,69.3L1440,64L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path>
+      </svg>
+    </div>
+  </div>
 </section>
 
 <section class="block white-bg" id="flowers">
