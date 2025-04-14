@@ -12,6 +12,11 @@ body {
     overflow-x: hidden;
 }
 
+body.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
 .falling-petals {
     position: fixed;
     top: 0;
@@ -437,7 +442,6 @@ p {
 
 .flower-decor {
     position: fixed;
-    bottom: 0;
     z-index: 0;
     pointer-events: none;
     animation: fadeInUp 1.5s ease-out forwards;
@@ -446,7 +450,7 @@ p {
 }
 
 .flower-decor img {
-    width: 200px;
+    width: 160px;
     max-width: 40vw;
     height: auto;
     opacity: 0.9;
@@ -454,6 +458,7 @@ p {
 
 .flower-decor-right {
     right: 0;
+    bottom: 0;
 }
 .flower-decor-right img {
     transform: rotate(-20deg) translateX(40px);
@@ -462,17 +467,105 @@ p {
 
 .flower-decor-left {
     left: 0;
+    top: 0;
 }
 .flower-decor-left img {
     /*transform: rotate(20deg);*/
     transform-origin: top left;
 }
 
+.mobile-intro {
+    display: none;
+}
+
+@keyframes fadeOutUpBlur {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+        filter: blur(10px);
+    }
+}
+
+.mobile-intro.hide {
+    animation: fadeOutUpBlur 0.8s ease forwards;
+}
+
+
 @media (max-width: 768px) {
     .flower-decor img {
-        width: 120px;
-        max-width: 50vw;
+        width: 100px;
+        max-width: 30vw;
         opacity: 0.7;
+    }
+    .mobile-intro {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99999;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        touch-action: none;
+    }
+
+    .intro-image {
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .intro-text {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-family: 'Great Vibes', serif;
+        z-index: 2;
+    }
+
+    .intro-text h4 {
+        font-size: 3.2rem;
+        margin: 0;
+    }
+
+    .intro-text p {
+        font-size: 2rem;
+        margin: 5px 0 20px;
+        color: white;
+    }
+
+    .intro-arrow {
+        position: absolute;
+        bottom: 100px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-family: 'Cormorant Garamond', serif;
+        z-index: 2;
+    }
+
+    .scroll-arrow {
+        width: 40px;
+        height: auto;
+        animation: bounce 2s infinite;
+        filter: brightness(0) invert(1);
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(10px); }
     }
 }
 
